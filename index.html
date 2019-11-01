@@ -63,6 +63,9 @@
     var outputContainer = document.getElementById("output");
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
+    
+    setTimeout(function () {
+    requestAnimationFrame(tick);}, 10);
     function drawLine(begin, end, color) {
       canvas.beginPath();
       canvas.moveTo(begin.x, begin.y);
@@ -109,3 +112,5 @@
   </script>
 </body>
 </html>
+
+
