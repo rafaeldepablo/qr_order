@@ -46,7 +46,7 @@
   </style>
 </head>
 <body>
-  <h1>jsQR Demo v2</h1>
+  <h1>jsQR Demo v2.1</h1>
   <a id="githubLink" href="https://github.com/cozmo/jsQR">View documentation on Github</a>
   <p>Pure JavaScript QR code decoding library.</p>
   <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
@@ -63,9 +63,7 @@
     var outputContainer = document.getElementById("output");
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
-    
-    setTimeout(function () {
-    requestAnimationFrame(tick);}, 10);
+
     
     function drawLine(begin, end, color) {
       canvas.beginPath();
