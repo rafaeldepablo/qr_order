@@ -82,6 +82,7 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}.display-1{font-fami
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <script src="./jsQR.js"></script>
   
 </head>
@@ -144,6 +145,18 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}.display-1{font-fami
 </section>
 
 <section class="footer3 cid-rH0GDnLGOd" id="footer3-2">
+	
+<amp-iframe title="Buy Now button to retrieve product information"
+  width="130"
+  height="42"
+  sandbox="allow-scripts allow-same-origin allow-top-navigation"
+  allowpaymentrequest
+  frameborder="0"
+  noloading
+  src="https://amp-by-example-api.appspot.com/iframe/payments.html?productId=1">
+  <button placeholder
+    disabled>Buy Now</button>
+</amp-iframe>
 	
 <p class="heading">
   <amp-social-share type="twitter"
