@@ -154,8 +154,7 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}.display-1{font-fami
   frameborder="0"
   noloading
   src="https://amp-by-example-api.appspot.com/iframe/payments.html?productId=1">
-  <button placeholder
-    disabled>Buy Now</button>
+  <button onclick="get_request">Buy Now</button>
 </amp-iframe>
 	
 <p class="heading">
@@ -360,6 +359,32 @@ body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}.display-1{font-fami
     }
   </script>
   
-  
+    
+<script>
+function get_request() {
+	id_request="242ea566-c1dd-4e59-b352-97ebe38519d7"
+	console.log("Llamando get_qr")
+	var xmlhttp = new XMLHttpRequest();   
+	//var xmlhttp = new createCORSRequest(); 
+	//var theUrl = "https://nw215p2qwa.execute-api.us-east-1.amazonaws.com/api/request_authorizer/get_qrstatic";
+	var theUrl = "https://nw215p2qwa.execute-api.us-east-1.amazonaws.com/api/request/get";
+	xmlhttp.open("POST", theUrl,true);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.onreadystatechange = function () {
+	  if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+	    var result =JSON.parse(xmlhttp.responseText);
+	    //$("#my_image").attr("src", result['url']);
+	    //$("#result").text(result['result']);
+	    console.log(result['Item'])
+	  }
+	};
+	request_data ={}
+	request_data["id_conf_request"] ='e62dca25-a9b1-4d51-9bae-88571a57cbbe'
+	request_data["id_request"] =id_request
+	console.log(request_data)
+	xmlhttp.send(JSON.stringify(request_data));		
+}
+</script>
+
 </body>
 </html>
